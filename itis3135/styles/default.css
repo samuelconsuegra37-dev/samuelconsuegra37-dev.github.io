@@ -1,0 +1,23 @@
+body {
+    background-color: #F6F7EB
+}
+
+a:link {
+    color: #E94F37
+}
+a:visited {
+    color: #3F88C5
+}
+
+h1, h2, h3, p, ul, figure {
+    color: #393E41;
+    font-family: 'Glegoo', Georgia, serif;
+}
+
+.center-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    height: auto;
+}
