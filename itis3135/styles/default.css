@@ -5,13 +5,18 @@ body {
 a:link {
     color: #E94F37
 }
+
 a:visited {
     color: #3F88C5
 }
 
-h1, h2, h3, p, ul, figure {
+h1, h2 {
     color: #393E41;
     font-family: 'Glegoo', Georgia, serif;
+}
+
+h3, p, ul, figure {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 .center-img {
@@ -20,4 +25,21 @@ h1, h2, h3, p, ul, figure {
     margin-right: auto;
     width: 20%;
     height: auto;
+}
+body {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+}
+
+h6 {
+    font-size: large;
+}
+
+figcaption {
+    text-align: center;
+    font-size: small;
+    font-style: italic;
 }
