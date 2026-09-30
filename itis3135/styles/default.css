@@ -6,26 +6,24 @@ a:link {
     color: #E94F37
 }
 
-a:visited {
-    color: #014d4e
-}
-
-h1, h2 {
+h1 {
     color: #393E41;
     font-family: 'Glegoo', Georgia, serif;
+    text-align: center;
 }
 
 h3, p, ul, figure {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-.center-img {
+img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 20%;
     height: auto;
 }
+
 body {
     max-width: 900px;
     margin: 0 auto;
