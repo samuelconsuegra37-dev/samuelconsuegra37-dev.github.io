@@ -41,3 +41,91 @@ figcaption {
     font-size: small;
     font-style: italic;
 }
+table {
+    border-collapse: collapse;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 0.9rem;
+    border: 2px solid #393E41;
+}
+
+caption {
+    color: #393E41;
+    font-family: 'Glegoo', Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 8px;
+}
+
+th {
+    background-color: #393E41;
+    color: #F6F7EB;
+    border-bottom: 3px solid #E94F37;
+    text-align: left;
+}
+
+th, td {
+    padding: 8px 10px;
+}
+
+td {
+    color: #393E41;
+    border-bottom: 1px solid #D6D8C8;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ECEEDD;
+}
+
+tbody tr:hover {
+    background-color: #FBE3DF;
+}
+
+@media (max-width: 600px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+ol, dl {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+dt {
+    color: #393E41;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Dark banner sections on landing page */
+.hero {
+    background-color: #393E41;
+    color: #F6F7EB;
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+    border-bottom: 4px solid #E94F37;
+}
+
+/* Bigger heading for banners (class avoids qualified heading) */
+.hero-title {
+    font-family: 'Glegoo', Georgia, serif;
+    font-size: 1.6rem;
+}
+
+/* Links styled as buttons */
+a.cta {
+    display: inline-block;
+    background-color: #E94F37;
+    color: #F6F7EB;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 18px;
+    margin: 5px;
+}
+
+/* Button hover color swap */
+a.cta:hover {
+    background-color: #F6F7EB;
+    color: #E94F37;
+}

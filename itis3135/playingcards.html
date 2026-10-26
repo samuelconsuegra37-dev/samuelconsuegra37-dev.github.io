@@ -7,16 +7,147 @@
         <link rel="icon" type="image/png" href="images/favicon.png">
         <link rel="stylesheet" href="styles/default.css">
         <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
-        <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            padding: 20px;
+            font-family: Georgia, serif;
+        }
+
+        /* Card container: centered, wrapping row */
+        #playing-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            /* Room for exactly three cards per row (3 x 150px + 2 x 20px gap) */
+            max-width: 490px;
+            margin: 0 auto;
+        }
+
+        /* Single playing card */
+        .card {
+            display: flex;
+            justify-content: space-between;
+            flex: 0 0 150px;
+            aspect-ratio: 15 / 22;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: #393E41;
+            border: 3px solid #E94F37;
+            border-radius: 10px;
+            font-size: 1.5rem;
+        }
+
+        /* Top-left corner rank and suit */
+        .left {
+            align-self: flex-start;
+        }
+
+        /* Center suit symbols, stacked */
+        .middle {
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 2rem;
+        }
+
+        /* Bottom-right corner rank and suit */
+        .right {
+            align-self: flex-end;
+        }
+
+        /* Alternating racing yellow card color */
+        .card:nth-child(odd) {
+            color: #F2C14E;
+        }
+
+        /* Alternating racing blue card color */
+        .card:nth-child(even) {
+            color: #6EC1E4;
+        }
+    </style>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
     </head>
     <body>
+        <!-- div: placeholder that loads the shared header -->
         <div data-include="components/header.html"></div>
         <hr>
         <main>
             <h2>Playing Cards</h2>
+            <p>The Crocodile Exotics garage deck. Suits: ⚙ Gears, ⛐ Cars, ⚑ Flags, and ⛟ Trucks.</p>
+            <!-- div with playing-cards id: groups the cards so they center in a row -->
+            <div id="playing-cards">
+            <!-- div with card class: box for one playing card -->
+            <div class="card">
+                <!-- div with left class: top-left corner label -->
+                <div class="left">3⚙</div>
+                <!-- div with middle class: groups the center suit symbols -->
+                <div class="middle">
+                    <!-- span: one suit symbol each, stacked by the middle div -->
+                    <span>⚙</span>
+                    <span>⚙</span>
+                    <span>⚙</span>
+                </div>
+                <!-- div with right class: bottom-right corner label -->
+                <div class="right">3⚙</div>
+            </div>
 
+            <!-- divs and spans: same card layout as above -->
+            <div class="card">
+                <div class="left">2⛐</div>
+                <div class="middle">
+                    <span>⛐</span>
+                    <span>⛐</span>
+                </div>
+                <div class="right">2⛐</div>
+            </div>
+
+            <!-- divs and spans: same card layout as above -->
+            <div class="card">
+                <div class="left">2⚑</div>
+                <div class="middle">
+                    <span>⚑</span>
+                    <span>⚑</span>
+                </div>
+                <div class="right">2⚑</div>
+            </div>
+
+            <!-- divs and spans: same card layout as above -->
+            <div class="card">
+                <div class="left">4⛟</div>
+                <div class="middle">
+                    <span>⛟</span>
+                    <span>⛟</span>
+                    <span>⛟</span>
+                    <span>⛟</span>
+                </div>
+                <div class="right">4⛟</div>
+            </div>
+
+            <!-- divs and spans: same card layout as above -->
+            <div class="card">
+                <div class="left">A⚑</div>
+                <div class="middle">
+                    <span>⚑</span>
+                </div>
+                <div class="right">A⚑</div>
+            </div>
+
+            <!-- divs and spans: same card layout as above -->
+            <div class="card">
+                <div class="left">3⛐</div>
+                <div class="middle">
+                    <span>⛐</span>
+                    <span>⛐</span>
+                    <span>⛐</span>
+                </div>
+                <div class="right">3⛐</div>
+            </div>
+            </div>
         </main>
         <hr>
+        <!-- div: placeholder that loads the shared footer -->
         <div data-include="components/footer.html"></div>
         <script src="scripts/HTMLInclude.min.js"></script>
     </body>

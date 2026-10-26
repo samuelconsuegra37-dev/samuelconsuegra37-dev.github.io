@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Samuel Consuegra's Sneaky Crocodile | ITIS3135 | Survey</title>
+        <title>Samuel Consuegra's Sneaky Crocodile | ITIS3135 | Car Survey</title>
         <link rel="icon" type="image/png" href="images/favicon.png">
         <link rel="stylesheet" href="styles/default.css">
         <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
@@ -13,8 +13,135 @@
         <div data-include="components/header.html"></div>
         <hr>
         <main>
-            <h2>Survey</h2>
+            <h2>Car Survey</h2>
+            <p>Tell us about your dream ride by filling out this short car survey.</p>
 
+            <form>
+                <label>
+                    Name
+                    <input type="text" name="name" placeholder="Enter your name" required>
+                </label>
+
+                <label>
+                    Email
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                </label>
+
+                <label>
+                    Age
+                    <input type="number" name="number" placeholder="Enter your age" min="1" max="120">
+                </label>
+
+                <label>
+                    Favorite Car Brand
+                    <select name="brand">
+                    <option value="toyota">Toyota</option>
+                    <option value="honda">Honda</option>
+                    <option value="ford">Ford</option>
+                    <option value="chevrolet">Chevrolet</option>
+                    <option value="bmw">BMW</option>
+                    <option value="mercedes">Mercedes-Benz</option>
+                    <option value="porsche">Porsche</option>
+                    <option value="ferrari">Ferrari</option>
+                    <option value="lamborghini">Lamborghini</option>
+                    <option value="tesla">Tesla</option>
+                    <option value="other">Other</option>
+                    </select>
+                </label>
+
+                <label>
+                    Favorite Car Model
+                    <input type="text" name="model" placeholder="e.g. Mustang GT, 911 Turbo, Supra">
+                </label>
+
+                <label>
+                    Favorite Car Color
+                    <input type="color" name="color" value="#cc0000">
+                </label>
+
+                <fieldset>
+                <legend>What type of car do you prefer?</legend>
+                <label>
+                    <input type="radio" name="type" value="sedan"> Sedan
+                </label>
+                <label>
+                    <input type="radio" name="type" value="coupe"> Coupe
+                </label>
+                <label>
+                    <input type="radio" name="type" value="suv"> SUV
+                </label>
+                <label>
+                    <input type="radio" name="type" value="truck"> Truck
+                </label>
+                <label>
+                    <input type="radio" name="type" value="convertible"> Convertible
+                </label>
+                <label>
+                    <input type="radio" name="type" value="hatchback"> Hatchback
+                </label>
+                </fieldset>
+
+                <fieldset>
+                <legend>What engine type do you prefer?</legend>
+                <label>
+                    <input type="radio" name="engine" value="v6"> V6
+                </label>
+                <label>
+                    <input type="radio" name="engine" value="v8"> V8
+                </label>
+                <label>
+                    <input type="radio" name="engine" value="v12"> V12
+                </label>
+                <label>
+                    <input type="radio" name="engine" value="turbo-4"> Turbocharged 4-Cylinder
+                </label>
+                <label>
+                    <input type="radio" name="engine" value="hybrid"> Hybrid
+                </label>
+                <label>
+                    <input type="radio" name="engine" value="electric"> Electric
+                </label>
+                </fieldset>
+
+                <fieldset>
+                <legend>Preferred Transmission</legend>
+                <label>
+                    <input type="radio" name="transmission" value="manual"> Manual
+                </label>
+                <label>
+                    <input type="radio" name="transmission" value="automatic"> Automatic
+                </label>
+                </fieldset>
+
+                <fieldset>
+                <legend>Which features matter most to you?</legend>
+                <label>
+                    <input type="checkbox" name="features" value="performance"> Performance
+                </label>
+                <label>
+                    <input type="checkbox" name="features" value="fuel-economy"> Fuel Economy
+                </label>
+                <label>
+                    <input type="checkbox" name="features" value="safety"> Safety
+                </label>
+                <label>
+                    <input type="checkbox" name="features" value="technology"> Technology
+                </label>
+                <label>
+                    <input type="checkbox" name="features" value="comfort"> Comfort
+                </label>
+                <label>
+                    <input type="checkbox" name="features" value="style"> Style
+                </label>
+                </fieldset>
+
+                <label>
+                    Dream Car
+                    <textarea name="dream-car" placeholder="Describe your dream car"></textarea>
+                </label>
+
+                <button type="submit">Submit</button>
+            </form>
         </main>
         <hr>
         <div data-include="components/footer.html"></div>
