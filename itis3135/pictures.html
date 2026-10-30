@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samuel Consuegra's Sneaky Crocodile | ITIS3135 | Everything Images</title>
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <link rel="stylesheet" href="styles/default.css">
+        <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+        <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!-- div: placeholder that loads the shared header -->
+        <div data-include="components/header.html"></div>
+        <hr>
+        <main>
+            <h2>Everything Images</h2>
+            <p>This page demonstrates the correct ways to handle images on a website, and how not to do it. Using two photos, one from Pexels.com and one I took myself, it compares image formats (JPG, GIF, greyscale, and black and white), resizing an image with CSS versus resizing it in an image editor, what happens when an image is stretched out of proportion, and why enlarging a small image with CSS makes it look blurry.</p>
+
+            <section>
+                <h3>Demonstrating Image Manipulation with a Motorsport Photo from Pexels.com</h3>
+                <p>I picked this photo because it fits the exotic car theme of my site. It was taken by Joshua Cilliers, a Cape Town automotive photographer who specializes in motorsport and shoots cars, races, car builds. The photo shows a silver Porsche 911 GT3 Cup race car. It was shot on a Canon EOS 600D. The original is a JPG that is 5184 x 3456 pixels and 1.20 MB.</p>
+
+                <article>
+                    <h4>Original Image</h4>
+                    <p>
+                        <a href="images/high-speed-race-car-on-track-at-sunset-36626909@joshua-cillers_pexels.jpg" target="_blank">Original Image (JPG)</a> |
+                        <a href="images/high-speed-race-car-on-track-at-sunset-36626909@joshua-cillers_pexels.gif" target="_blank">Original Image as a GIF</a> |
+                        <a href="images/high-speed-race-car-on-track-at-sunset-36626909@joshua-cillers_pexels-greyscale.jpg" target="_blank">Original Image in Greyscale</a> |
+                        <a href="images/high-speed-race-car-on-track-at-sunset-36626909@joshua-cillers_pexels-black-and-white.png" target="_blank">Original Image in Black and White</a>
+                    </p>
+                </article>
+
+                <article>
+                    <h4>Downsizing Images with CSS</h4>
+                    <figure>
+                        <!-- inline style: shrinks the full-size original to 778px wide (about 15%), keeping its proportions; inline CSS required by the assignment -->
+                        <img src="images/high-speed-race-car-on-track-at-sunset-36626909@joshua-cillers_pexels.jpg" alt="Silver Porsche race car number 33 speeding along a track" style="width: 778px;">
+                        <figcaption>The full 5184 x 3456 original shrunk to about 15% (778 x 518) with inline CSS.</figcaption>
+                    </figure>
+                </article>
+
+                <article>
+                    <h4>Proper Reduction of Image with Editor</h4>
+                    <figure>
+                        <!-- inline style: matches the editor-resized size (600 x 400) so the browser reserves the space while it loads; required by the assignment -->
+                        <img src="images/high-speed-race-car-on-track-at-sunset-36626909@joshua-cillers_pexels-600x400.jpg" alt="Silver Porsche race car number 33 speeding along a track, resized to 600 by 400" style="width: 600px; height: 400px;">
+                        <figcaption>Resized to 600 x 400 in an image editor.</figcaption>
+                    </figure>
+                </article>
+
+                <article>
+                    <h4>Improper Image Proportions with CSS</h4>
+                    <!-- div with image-row class: shows the figures side by side -->
+                    <div class="image-row">
+                        <figure>
+                            <!-- inline style: shows the stretched image at half size (300 x 134) so all four fit side by side; required by the assignment -->
+                            <img src="images/high-speed-race-car-on-track-at-sunset-36626909@joshua-cillers_pexels-600x268.jpg" alt="Race car photo squashed vertically to 600 by 268" style="width: 300px; height: 134px;">
+                            <figcaption>600 x 268: height cut by 33%.</figcaption>
+                        </figure>
+                        <figure>
+                            <!-- inline style: shows the stretched image at half size (300 x 90) so all four fit side by side; required by the assignment -->
+                            <img src="images/high-speed-race-car-on-track-at-sunset-36626909@joshua-cillers_pexels-600x180.jpg" alt="Race car photo squashed vertically to 600 by 180" style="width: 300px; height: 90px;">
+                            <figcaption>600 x 180: height cut by 33% again.</figcaption>
+                        </figure>
+                        <figure>
+                            <!-- inline style: shows the stretched image at half size (201 x 200) so all four fit side by side; required by the assignment -->
+                            <img src="images/high-speed-race-car-on-track-at-sunset-36626909@joshua-cillers_pexels-402x400.jpg" alt="Race car photo squeezed horizontally to 402 by 400" style="width: 201px; height: 200px;">
+                            <figcaption>402 x 400: width cut by 33%.</figcaption>
+                        </figure>
+                        <figure>
+                            <!-- inline style: shows the stretched image at half size (135 x 200) so all four fit side by side; required by the assignment -->
+                            <img src="images/high-speed-race-car-on-track-at-sunset-36626909@joshua-cillers_pexels-269x400.jpg" alt="Race car photo squeezed horizontally to 269 by 400" style="width: 135px; height: 200px;">
+                            <figcaption>269 x 400: width cut by 33% again.</figcaption>
+                        </figure>
+                    </div>
+                </article>
+
+                <article>
+                    <h4>Improper Enlarging with CSS</h4>
+                    <!-- div with image-row class: shows the figures side by side -->
+                    <div class="image-row">
+                        <figure>
+                            <!-- inline style: displays the editor-resized image at 400 x 267 to compare against the enlarged 25% copy; required by the assignment -->
+                            <img src="images/high-speed-race-car-on-track-at-sunset-36626909@joshua-cillers_pexels-600x400.jpg" alt="Race car photo at 600 by 400, displayed smaller" style="width: 400px; height: 267px;">
+                            <figcaption>The 600 x 400 version, displayed at 400 x 267. It stays sharp.</figcaption>
+                        </figure>
+                        <figure>
+                            <!-- inline style: same 400 x 267 size as its neighbor, so the 25% image is enlarged and looks blurry; required by the assignment -->
+                            <img src="images/high-speed-race-car-on-track-at-sunset-36626909@joshua-cillers_pexels-150x100.jpg" alt="Race car photo at 150 by 100, stretched larger" style="width: 400px; height: 267px;">
+                            <figcaption>The 150 x 100 version (25%), stretched to the same 400 x 267.</figcaption>
+                        </figure>
+                    </div>
+                </article>
+            </section>
+
+            <hr>
+
+            <section>
+                <h3>Demonstrating Image Manipulation with My Own Bottle Cap Geometry Photo</h3>
+                <p>I took this photo myself. The bottle cap is a near perfect circle. I took it on october 10th at Atkins Library.
+                <article>
+                    <h4>Original Image</h4>
+                    <p>
+                        <a href="images/bottle_cap_next_to_head@samuel-consuegra.jpg" target="_blank">Original Image (JPG)</a> |
+                        <a href="images/bottle_cap_next_to_head@samuel-consuegra.gif" target="_blank">Original Image as a GIF</a> |
+                        <a href="images/bottle_cap_next_to_head@samuel-consuegra-greyscale.jpg" target="_blank">Original Image in Greyscale</a> |
+                        <a href="images/bottle_cap_next_to_head@samuel-consuegra-black-and-white.png" target="_blank">Original Image in Black and White</a>
+                    </p>
+                </article>
+
+                <article>
+                    <h4>Downsizing Images with CSS</h4>
+                    <figure>
+                        <!-- inline style: shrinks the full-size original to 410px wide (about 15%), keeping its proportions; inline CSS required by the assignment -->
+                        <img src="images/bottle_cap_next_to_head@samuel-consuegra.jpg" alt="Me holding a white bottle cap next to my face" style="width: 410px;">
+                        <figcaption>The full 2736 x 3648 original shrunk to about 15% (410 x 547) with inline CSS.</figcaption>
+                    </figure>
+                </article>
+
+                <article>
+                    <h4>Proper Reduction of Image with Editor</h4>
+                    <figure>
+                        <!-- inline style: matches the editor-resized size (450 x 600) so the browser reserves the space while it loads; required by the assignment -->
+                        <img src="images/bottle_cap_next_to_head@samuel-consuegra-450x600.jpg" alt="Me holding a white bottle cap next to my face, resized to 450 by 600" style="width: 450px; height: 600px;">
+                        <figcaption>Resized to 450 x 600 in an image editor.</figcaption>
+                    </figure>
+                </article>
+
+                <article>
+                    <h4>Improper Image Proportions with CSS</h4>
+                    <!-- div with image-row class: shows the figures side by side -->
+                    <div class="image-row">
+                        <figure>
+                            <!-- inline style: shows the stretched image at half size (225 x 201) so all four fit side by side; required by the assignment -->
+                            <img src="images/bottle_cap_next_to_head@samuel-consuegra-450x402.jpg" alt="Bottle cap photo squashed vertically to 450 by 402" style="width: 225px; height: 201px;">
+                            <figcaption>450 x 402: height cut by 33%.</figcaption>
+                        </figure>
+                        <figure>
+                            <!-- inline style: shows the stretched image at half size (225 x 135) so all four fit side by side; required by the assignment -->
+                            <img src="images/bottle_cap_next_to_head@samuel-consuegra-450x269.jpg" alt="Bottle cap photo squashed vertically to 450 by 269" style="width: 225px; height: 135px;">
+                            <figcaption>450 x 269: height cut by 33% again.</figcaption>
+                        </figure>
+                        <figure>
+                            <!-- inline style: shows the stretched image at half size (151 x 300) so all four fit side by side; required by the assignment -->
+                            <img src="images/bottle_cap_next_to_head@samuel-consuegra-302x600.jpg" alt="Bottle cap photo squeezed horizontally to 302 by 600" style="width: 151px; height: 300px;">
+                            <figcaption>302 x 600: width cut by 33%.</figcaption>
+                        </figure>
+                        <figure>
+                            <!-- inline style: shows the stretched image at half size (101 x 300) so all four fit side by side; required by the assignment -->
+                            <img src="images/bottle_cap_next_to_head@samuel-consuegra-202x600.jpg" alt="Bottle cap photo squeezed horizontally to 202 by 600" style="width: 101px; height: 300px;">
+                            <figcaption>202 x 600: width cut by 33% again.</figcaption>
+                        </figure>
+                    </div>
+                </article>
+
+                <article>
+                    <h4>Improper Enlarging with CSS</h4>
+                    <!-- div with image-row class: shows the figures side by side -->
+                    <div class="image-row">
+                        <figure>
+                            <!-- inline style: displays the editor-resized image at 300 x 400 to compare against the enlarged 25% copy; required by the assignment -->
+                            <img src="images/bottle_cap_next_to_head@samuel-consuegra-450x600.jpg" alt="Bottle cap photo at 450 by 600, displayed smaller" style="width: 300px; height: 400px;">
+                            <figcaption>The 450 x 600 version, displayed at 300 x 400.</figcaption>
+                        </figure>
+                        <figure>
+                            <!-- inline style: same 300 x 400 size as its neighbor, so the 25% image is enlarged and looks blurry; required by the assignment -->
+                            <img src="images/bottle_cap_next_to_head@samuel-consuegra-112x150.jpg" alt="Bottle cap photo at 112 by 150, stretched larger" style="width: 300px; height: 400px;">
+                            <figcaption>The 112 x 150 version (25%), stretched to the same 300 x 400.</figcaption>
+                        </figure>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <hr>
+        <!-- div: placeholder that loads the shared footer -->
+        <div data-include="components/footer.html"></div>
+        <script src="scripts/HTMLInclude.min.js"></script>
+    </body>
+</html>

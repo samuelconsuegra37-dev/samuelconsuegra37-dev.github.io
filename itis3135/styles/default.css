@@ -129,3 +129,18 @@ a.cta:hover {
     background-color: #F6F7EB;
     color: #E94F37;
 }
+
+/* Puts image figures side by side on the pictures page */
+.image-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* Removes default figure side margins so the row fits, and keeps captions as wide as their image */
+.image-row figure {
+    margin: 0;
+    width: min-content;
+}
