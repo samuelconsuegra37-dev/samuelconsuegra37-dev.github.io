@@ -144,3 +144,130 @@ a.cta:hover {
     margin: 0;
     width: min-content;
 }
+
+/* Introduction form: each group of fields is a card */
+.intro-form fieldset {
+    background-color: #FFFFFF;  /* white background for the card */
+    border: 2px solid #393E41;
+    border-radius: 8px;
+    margin: 0 0 20px;
+    padding: 10px 20px 15px;
+}
+
+/* Introduction form: section titles as charcoal tabs */
+.intro-form legend {
+    background-color: #393E41;
+    color: #F6F7EB;
+    font-family: 'Glegoo', Georgia, serif;
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+
+/* Introduction form: course groups nested inside the courses card, two fields per row */
+.intro-form fieldset fieldset {
+    background-color: #F6F7EB;
+    border: 1px solid #C9CBB8;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 15px;
+}
+
+/* Introduction form: smaller red-orange titles for each course */
+.intro-form fieldset fieldset legend {
+    background-color: #E94F37;
+    font-size: 0.9rem;
+}
+
+/* Introduction form: label text sits above its field, and the field fills the row */
+.intro-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+    color: #393E41;
+}
+
+/* Introduction form: replaces the default text boxes */
+.intro-form input,
+.intro-form textarea {
+    font: inherit;
+    font-weight: normal;
+    color: #393E41;
+    background-color: #FDFDF8;
+    border: 1px solid #C9CBB8;
+    border-radius: 6px;
+    padding: 8px 10px;
+}
+
+/* Introduction form: taller text areas that only resize up and down */
+.intro-form textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Introduction form: red-orange glow on the field being typed in */
+.intro-form input:focus,
+.intro-form textarea:focus {
+    outline: none;
+    border-color: #E94F37;
+    box-shadow: 0 0 0 3px rgba(233, 79, 55, 0.25);
+}
+
+/* Introduction form: softer placeholder text */
+.intro-form input::placeholder,
+.intro-form textarea::placeholder {
+    color: #8A8E90;
+}
+
+/* Introduction form: upload button styled like the site's charcoal tabs */
+.intro-form input[type="file"]::file-selector-button {
+    background-color: #393E41;
+    color: #F6F7EB;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Introduction form: submit and reset buttons */
+.intro-form button {
+    background-color: #E94F37;
+    color: #F6F7EB;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 24px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Introduction form: reset button in charcoal so it stands apart from submit */
+.intro-form button[type="reset"] {
+    background-color: #393E41;
+}
+
+/* Introduction form: buttons lighten on hover */
+.intro-form button:hover {
+    opacity: 0.85;
+}
+
+/* Introduction form: one field per row on phones */
+@media (max-width: 600px) {
+    .intro-form fieldset fieldset {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Introduction form: generated HTML / JSON / XML code block, scrolls sideways for long lines */
+.code-output {
+    background-color: #393E41;
+    color: #F6F7EB;
+    border-left: 4px solid #E94F37;
+    border-radius: 6px;
+    padding: 15px;
+    overflow-x: auto;
+    font-size: 0.85rem;
+}

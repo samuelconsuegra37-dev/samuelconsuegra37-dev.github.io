@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samuel Consuegra's Sneaky Crocodile | ITIS3135 | Introduction Form</title>
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <link rel="stylesheet" href="styles/default.css">
+        <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+        <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!-- div: placeholder that loads the shared header -->
+        <div data-include="components/header.html"></div>
+        <hr>
+        <main>
+            <h2>Introduction Form</h2>
+            <!-- form-heading id: hidden by introduction.js once the form is submitted -->
+            <h3 id="form-heading">Please Submit The Form Below:</h3>
+
+            <!-- intro-form class: custom styling for this form only, so the survey form is unaffected -->
+            <!-- form id: lets introduction.js find the form -->
+            <form class="intro-form" id="form">
+                <fieldset>
+                    <legend>Name</legend>
+                    <p><label>First Name <input type="text" name="first-name" value="Samuel" required></label></p>
+                    <p><label>Middle Name or Initial (optional) <input type="text" name="middle-name"></label></p>
+                    <p><label>Nickname or Preferred Name (optional) <input type="text" name="nickname"></label></p>
+                    <p><label>Last Name <input type="text" name="last-name" value="Consuegra" required></label></p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Acknowledgment</legend>
+                    <p><label>Acknowledgment Statement <textarea name="acknowledgment" placeholder="Enter your acknowledgment statement" required></textarea></label></p>
+                    <p><label>Acknowledgment Date <input type="date" name="acknowledgment-date" required></label></p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Mascot and Divider</legend>
+                    <p><label>Mascot Adjective <input type="text" name="mascot-adjective" value="Sneaky" required></label></p>
+                    <p><label>Mascot Animal <input type="text" name="mascot-animal" value="Crocodile" required></label></p>
+                    <p><label>Divider <input type="text" name="divider" value="|" placeholder="e.g. ~, |, ♥️" required></label></p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Picture</legend>
+                    <figure>
+                        <img src="images/profile2.jpg" alt="Default introduction picture of me at Atkins Library" width="200">
+                        <figcaption>Default picture. Upload your own below to replace it.</figcaption>
+                    </figure>
+                    <p><label>Upload a Picture <input type="file" name="picture" accept="image/*"></label></p>
+                    <p><label>Picture Caption <input type="text" name="picture-caption" value="Atkins Library" required></label></p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Personal Statement</legend>
+                    <p><label>Personal Statement <textarea name="personal-statement" required>Hey, my name is Samuel Consuegra. I’m 20 years old and I’m a junior studying computer science concentrating in Cybersecurity. For fun I like to watch movies and play single player games like RDR2. I’m also really into computers, specifically PC hardware, cars, and occasionally I like to play the guitar.</textarea></label></p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Background</legend>
+                    <p><label>Personal Background <textarea name="personal-background" required>I was born and raised in Miami, Florida and I moved to Belmont, NC, when I was 16.</textarea></label></p>
+                    <p><label>Professional Background <textarea name="professional-background" required>I’ve worked as a line cook in the summers.</textarea></label></p>
+                    <p><label>Academic Background <textarea name="academic-background" required>Computer Science, junior year, concentrating in Cybersecurity.</textarea></label></p>
+                    <p><label>Background in This Subject <textarea name="subject-background" placeholder="Your experience with web development" required></textarea></label></p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Work Environment</legend>
+                    <p><label>Primary Work Computer <textarea name="primary-computer" required>Asus Laptop, Windows 11, Version 25H2</textarea></label></p>
+                    <p><label>Primary Work Location <textarea name="primary-location" required>My home bedroom</textarea></label></p>
+                    <p><label>Alternate Computer and Location <textarea name="alternate-computer" required>For computer, my main desktop I use at home. For location, anywhere on campus.</textarea></label></p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Courses I'm Taking and Why</legend>
+
+                    <!-- div with courses id: container that new courses are added to -->
+                    <div id="courses">
+                        <!-- course class: marks each course group so the script can read it -->
+                        <fieldset class="course">
+                            <legend>Course 1</legend>
+                            <p><label>Department <input type="text" name="course-department" value="MATH" required></label></p>
+                            <p><label>Number <input type="text" name="course-number" value="1242" required></label></p>
+                            <p><label>Name <input type="text" name="course-name" value="Calculus II" required></label></p>
+                            <p><label>Reason <input type="text" name="course-reason" value="For math requirements" required></label></p>
+                        </fieldset>
+                    </div>
+                    <!-- add-course id: lets introduction.js find this button -->
+                    <p><button type="button" id="add-course">Add Course</button></p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Quote</legend>
+                    <p><label>Quote <textarea name="quote" placeholder="I guess it comes down to a simple choice, really. Get busy living or get busy dying" required></textarea></label></p>
+                    <p><label>Quote Author <input type="text" name="quote-author" placeholder="Andy Dufresne (Tim Robbins) from The Shawshank Redemption" required></label></p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Optional Extras</legend>
+                    <p><label>Funny Thing (optional) <textarea name="funny-thing"></textarea></label></p>
+                    <p><label>Something I Would Like to Share (optional) <textarea name="something-to-share"></textarea></label></p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Links</legend>
+                    <p><label>CLT Web <input type="url" name="link-clt-web" placeholder="https://webpages.charlotte.edu/sconsueg/" required></label></p>
+                    <p><label>GitHub.io <input type="url" name="link-github-io" value="https://samuelconsuegra37-dev.github.io/" required></label></p>
+                    <p><label>GitHub <input type="url" name="link-github" placeholder="https://github.com/samuelconsuegra37-dev" required></label></p>
+                    <p><label>freeCodeCamp <input type="url" name="link-freecodecamp" placeholder="https://www.freecodecamp.org/samuelconsuegra" required></label></p>
+                    <p><label>Codecademy <input type="url" name="link-codecademy" placeholder="https://www.codecademy.com/profiles/samuelconsuegra" required></label></p>
+                    <p><label>LinkedIn <input type="url" name="link-linkedin" placeholder="https://www.linkedin.com/in/samuelconsuegra1253/" required></label></p>
+                </fieldset>
+
+                <p>
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                    <!-- clear-button id: lets introduction.js find this button -->
+                    <button type="button" id="clear-button">Clear</button>
+                </p>
+                <p>
+                    <!-- generate ids: let introduction.js find each button -->
+                    <button type="button" id="generate-html">Generate HTML</button>
+                    <button type="button" id="generate-json">Generate JSON</button>
+                    <button type="button" id="generate-xml">Generate XML</button>
+                </p>
+            </form>
+
+            <!-- div with intro-result id: empty spot that introduction.js fills with the submitted introduction -->
+            <div id="intro-result" hidden></div>
+
+        </main>
+        <hr>
+        <!-- div: placeholder that loads the shared footer -->
+        <div data-include="components/footer.html"></div>
+        <script src="scripts/HTMLInclude.min.js"></script>
+        <script src="scripts/introduction.js"></script>
+    </body>
+</html>
