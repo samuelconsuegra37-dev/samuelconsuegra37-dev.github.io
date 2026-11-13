@@ -1,0 +1,85 @@
+{
+  "firstName": "Samuel",
+  "middleName": "",
+  "nickname": "",
+  "lastName": "Consuegra",
+  "acknowledgment": "I understand that this is a public document, and I won’t put anything here I wouldn’t want anyone to see",
+  "acknowledgmentDate": "8/24/26",
+  "prettyNameDivider": "|",
+  "adjectives": "Sneaky",
+  "animal": "Crocodile",
+  "img": "images/profile2.jpg",
+  "pictureAlt": "Atkins Library",
+  "caption": "Atkins Library",
+  "personalInfo": {
+    "statement": "Hey, my name is Samuel Consuegra. I’m 20 years old and I’m a junior studying computer science concentrating in Cybersecurity. For fun I like to watch movies and play single player games like RDR2. I’m also really into computers, specifically PC hardware, cars, and occasionally I like to play the guitar.",
+    "personalBackground": "I was born and raised in Miami, Florida and I moved to Belmont, NC, when I was 16.",
+    "professionalBackground": "I’ve worked as a line cook in the summers.",
+    "academicBackground": "Computer Science, junior year, concentrating in Cybersecurity.",
+    "primaryWorkComputer": "Asus Laptop, Windows 11, Version 25H2",
+    "primaryWorkLocation": "My home bedroom",
+    "alternateComputerLocation": "For computer, my main desktop I use at home. For location, anywhere on campus."
+  },
+  "courses": [
+    {
+      "department": "MATH",
+      "courseNumber": "1242",
+      "courseTitle": "Calculus II",
+      "reasonForTaking": "For math requirements"
+    },
+    {
+      "department": "ITSC",
+      "courseNumber": "3146",
+      "courseTitle": "Introduction to Operating Systems & Networking",
+      "reasonForTaking": "It's an interesting topic"
+    },
+    {
+      "department": "ITIS",
+      "courseNumber": "3135",
+      "courseTitle": "Front End Web Application Development",
+      "reasonForTaking": "Very intrigued about the topic and it will be very useful"
+    },
+    {
+      "department": "ITIS",
+      "courseNumber": "3200",
+      "courseTitle": "Introduction to Info Security and Privacy",
+      "reasonForTaking": "Very interesting and relevant to my concentration"
+    },
+    {
+      "department": "ITSC",
+      "courseNumber": "3688",
+      "courseTitle": "Computing and AI - Ethics, Society and Communication",
+      "reasonForTaking": "Very interested in the topic these days"
+    }
+  ],
+  "quote": "I guess it comes down to a simple choice, really. Get busy living or get busy dying",
+  "quoteAuthor": "Andy Dufresne (Tim Robbins) from The Shawshank Redemption",
+  "funnyItem": "",
+  "somethingToShare": "",
+  "footerLinks": [
+    {
+      "label": "CLT Web",
+      "url": "https://webpages.charlotte.edu/sconsueg/"
+    },
+    {
+      "label": "GitHub.io",
+      "url": "https://samuelconsuegra37-dev.github.io/"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/samuelconsuegra37-dev"
+    },
+    {
+      "label": "freeCodeCamp",
+      "url": "https://www.freecodecamp.org/samuelcosuegra"
+    },
+    {
+      "label": "Codecademy",
+      "url": "https://www.codecademy.com/profiles/SamuelConsuegra"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/samuelconsuegra1253/"
+    }
+  ]
+}
