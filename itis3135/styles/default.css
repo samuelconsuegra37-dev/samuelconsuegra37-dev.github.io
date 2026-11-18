@@ -271,3 +271,21 @@ a.cta:hover {
     overflow-x: auto;
     font-size: 0.85rem;
 }
+
+/* Class introductions page: centers everything in main to match the header and footer */
+.centered-page {
+    text-align: center;
+}
+
+/* Class introductions page: keeps list bullets next to their centered text */
+.centered-page ul {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+/* Class introductions page: equal space on both sides of each quote */
+.centered-page blockquote {
+    margin-left: auto;
+    margin-right: auto;
+    font-style: italic;
+}

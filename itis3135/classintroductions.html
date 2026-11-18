@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samuel Consuegra's Sneaky Crocodile | ITIS3135 | Class Introductions</title>
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <link rel="stylesheet" href="styles/default.css">
+        <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+        <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!-- div: placeholder that loads the shared header -->
+        <div data-include="components/header.html"></div>
+        <hr>
+        <!-- class="centered-page": centers all the text, images, lists, and quotes inside main
+             so the introductions line up with the centered header and footer.
+             Styled by the .centered-page rules in styles/default.css. -->
+        <main class="centered-page">
+            <h2>Class Introductions</h2>
+            <!-- id="introductions": the container for every classmate's introduction.
+                 scripts/classintroductions.js finds this div with getElementById("introductions"),
+                 clears the "Loading introductions..." text, and adds one section per student
+                 (name and animal, image, first three courses, quote and quote author).
+                 If the fetch fails, the script puts an error message here instead. -->
+            <div id="introductions">Loading introductions...</div>
+        </main>
+        <hr>
+        <!-- div: placeholder that loads the shared footer -->
+        <div data-include="components/footer.html"></div>
+        <script src="scripts/HTMLInclude.min.js"></script>
+        <script src="scripts/classintroductions.js"></script>
+    </body>
+</html>

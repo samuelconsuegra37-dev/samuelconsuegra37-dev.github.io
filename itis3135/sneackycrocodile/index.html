@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sneaky Crocodile Customs | Home</title>
+        <link rel="icon" type="image/png" href="images/faviconS.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+        <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+        <style>
+            body {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 0 16px;
+                min-height: 100vh;
+                background: linear-gradient(160deg, #0b1a10 0%, #1d3b24 50%, #0a0a0a 100%);
+                font-family: "Inter", system-ui, sans-serif;
+                /* White font: the background is a very dark green-to-black gradient, so white text
+                   has the strongest contrast and is the easiest to read. Setting it on body makes
+                   every paragraph, list, and table cell white unless a rule below changes it. */
+                color: #ffffff;
+            }
+            header {
+                text-align: center;
+            }
+            /* Each heading is defined only once. clamp() lets the h1 and h2 font sizes
+               shrink on small screens, so they don't need to be redefined in the media query. */
+            h1 {
+                font-family: "Oswald", sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-size: clamp(1.8rem, 7vw, 2.6rem);
+                margin-bottom: 4px;
+                color: #7ed957;
+            }
+            h2 {
+                font-family: "Oswald", sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-size: clamp(1.3rem, 5vw, 1.5rem);
+                color: #7ed957;
+                border-bottom: 2px solid #7ed957;
+                padding-bottom: 6px;
+            }
+            h3 {
+                font-family: "Oswald", sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                /* White so the h3 subheadings stand apart from the green h1/h2 headings */
+                color: #ffffff;
+                margin-bottom: 4px;
+            }
+            /* .tagline class: used on the slogan under the company name in the header.
+               It pulls the slogan up under the h1. The <em> tag inside it makes it italic. */
+            .tagline {
+                margin-top: 0;
+            }
+            nav {
+                padding-bottom: 10px;
+            }
+            nav a, footer a {
+                display: inline-block;
+                margin: 4px 2px;
+                padding: 8px 18px;
+                background-color: #2e6b3a;
+                /* White text on the dark green button so the link labels are readable */
+                color: #ffffff;
+                text-decoration: none;
+                border-radius: 999px;
+                transition: background-color 0.2s, color 0.2s;
+            }
+            nav a:hover, nav a:focus-visible, footer a:hover, footer a:focus-visible {
+                background-color: #7ed957;
+                color: #0b1a10;
+            }
+            /* .plain class: used only on the "Designed by" credit link in the footer.
+               It removes the button styling so that link looks like plain text instead of a button. */
+            a.plain, a.plain:hover, a.plain:focus-visible {
+                background: none;
+                color: #cccccc;
+                padding: 0;
+            }
+            /* .card class: used on every div on the page. Each div groups related content
+               (a list, a build, or contact info) into a box with a faint background,
+               a thin green border, and rounded corners so it stands out from the page. */
+            .card {
+                background-color: rgba(255, 255, 255, 0.06);
+                border: 1px solid rgba(126, 217, 87, 0.4);
+                border-radius: 12px;
+                padding: 12px 18px;
+                margin: 16px 0;
+            }
+            /* .price class: used on the "Starting At" table cells on the Services page.
+               It makes the prices green and bold so they are easy to spot. */
+            .price {
+                color: #7ed957;
+                font-weight: 600;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+            th, td {
+                padding: 10px;
+                text-align: left;
+                border-bottom: 1px solid #3a5a40;
+            }
+            th {
+                color: #7ed957;
+                border-bottom: 2px solid #7ed957;
+            }
+            footer {
+                text-align: center;
+                padding-bottom: 40px;
+            }
+            /* Media query: applies only when the screen is 600px wide or less (phones).
+               It stacks the nav buttons into a column so they don't wrap awkwardly,
+               and tightens the table and cards so everything fits. */
+            @media (max-width: 600px) {
+                nav a {
+                    display: block;
+                    margin: 6px auto;
+                    max-width: 200px;
+                }
+                th, td {
+                    padding: 6px;
+                    font-size: 0.85rem;
+                }
+                .card {
+                    padding: 8px 12px;
+                }
+            }
+        </style>
+        <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div data-include="components/header.html"></div>
+        <main>
+            <section id="home">
+                <h2>Home</h2>
+                <p>Sneaky Crocodile Customs builds sleepers: cars that look stock from the curb but hide serious performance under the hood. Every build is custom-tailored to the owner, from mild street upgrades to full engine swaps.</p>
+                <!-- Card div: groups the list of reasons to choose the shop into one box -->
+                <div class="card">
+                    <h3>Why a Sneaky Crocodile?</h3>
+                    <ul>
+                        <li>Fully custom builds designed around your goals</li>
+                        <li>Factory-quality fit and finish</li>
+                        <li>Dyno-tuned and road-tested before delivery</li>
+                        <li>12-month warranty on all workmanship</li>
+                    </ul>
+                    <img src="images/mercedes.jpg" alt="clean mercedes" width="200">
+                </div>
+            </section>
+
+            <section id="services">
+                <h2>Services</h2>
+                <p>Pick a single upgrade or combine them into a complete package.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Includes</th>
+                            <th>Starting At</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Engine Swaps</strong></td>
+                            <td>Sourcing, install, wiring, tuning</td>
+                            <td class="price">$12,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Forced Induction</strong></td>
+                            <td>Turbo or supercharger kits, fuel upgrades</td>
+                            <td class="price">$6,500</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Suspension &amp; Brakes</strong></td>
+                            <td>Coilovers, big brake kits, alignment</td>
+                            <td class="price">$3,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Custom Interiors</strong></td>
+                            <td>Seats, upholstery, gauges, audio</td>
+                            <td class="price">$2,500</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Paint &amp; Wrap</strong></td>
+                            <td>Full respray, vinyl wraps, ceramic coating</td>
+                            <td class="price">$4,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="builds">
+                <h2>Builds</h2>
+                <p>A few of our favorite recent projects.</p>
+                <!-- Card divs: each one is a box for a single build, holding its name and description -->
+                <div class="card">
+                    <h3>The Grocery Getter</h3>
+                    <p>A family station wagon with a twin-turbo V8 swap. 650 horsepower.</p>
+                    <img src="images/volvo.jpg" alt="a seemingly lame car" width="200">
+                </div>
+                <div class="card">
+                    <h3>The Accountant</h3>
+                    <p>A beige commuter sedan with an all-wheel-drive conversion, built transmission, and track-ready suspension.</p>
+                    <img src="images/sleepyclunker.jpg" alt="the accountant" width="200">
+                </div>
+                <div class="card">
+                    <h3>The Swamp Runner</h3>
+                    <p>A lifted pickup with long-travel suspension, a supercharged V8, and our signature crocodile-green interior stitching.</p>
+                    <img src="images/truck.jpg" alt="the swamp runner" width="200">
+                </div>
+            </section>
+
+            <section id="about">
+                <h2>About</h2>
+                <p>I started Sneaky Crocodile Customs because I always thought some of the coolest cars were the ones that were seemingly normal until you popped the hood. Theres nothing cooler than a regular grocery getter or family vehicle that shreds pavement when no one expects it to. I have a passion for creating unique, high-performance vehicles that turn heads and deliver exceptional driving experiences.</p>
+                <p>We work closely with every customer, from the first sketch to the final dyno run, so the finished car is exactly what you imagined.</p>
+                <h3>Our Process</h3>
+                <ol>
+                    <li><strong>Consultation:</strong> Tell us about your car and your goals.</li>
+                    <li><strong>Design:</strong> We plan the build and give you a detailed quote.</li>
+                    <li><strong>Build:</strong> Our team gets to work, with progress updates along the way.</li>
+                    <li><strong>Tune &amp; Test:</strong> Every car is dyno-tuned and road-tested.</li>
+                    <li><strong>Delivery:</strong> You drive away in something sneaky.</li>
+                </ol>
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>Ready to start your build? Get in touch for a free consultation.</p>
+                <!-- Card div: keeps all the contact details together in one box -->
+                <div class="card">
+                    <p><strong>Shop:</strong> 123 Bayou Road, Charlotte, NC</p>
+                    <p><strong>Phone:</strong> (555) 012-3456</p>
+                    <p><strong>Email:</strong> builds@sneakycrocodile.example</p>
+                    <p><strong>Hours:</strong> Monday through Friday, 8am to 6pm; Saturday, 9am to 2pm</p>
+                </div>
+            </section>
+        </main>
+        <div data-include="components/footer.html"></div>
+        <!-- The showSection script stays in index.html (not in the footer component)
+             so it is always loaded, even before the header and footer are included. -->
+        <script>
+            function showSection(sectionId) {
+                var sections = document.querySelectorAll('section');
+                for (var i = 0; i < sections.length; i++) {
+                    sections[i].style.display = 'none';
+                }
+                var target = document.getElementById(sectionId);
+                if (target) {
+                    target.style.display = 'block';
+                    var sectionHeading = target.querySelector('h2');
+                    if (sectionHeading) {
+                        document.title = "Sneaky Crocodile Customs | " + sectionHeading.textContent;
+                    }
+                }
+            }
+            window.onload = function() {
+                showSection('home');
+            };
+        </script>
+        <script src="../scripts/HTMLInclude.min.js"></script>
+    </body>
+</html>
