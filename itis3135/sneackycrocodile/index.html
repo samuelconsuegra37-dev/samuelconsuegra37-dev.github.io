@@ -15,6 +15,9 @@
                 margin: 0 auto;
                 padding: 0 16px;
                 min-height: 100vh;
+                /* Black background: the gradient starts almost black (#0b1a10, a very dark green),
+                   lightens to dark green, and ends in near-black (#0a0a0a). The dark background
+                   fits the "sneaky" theme and makes the white text and green accents stand out. */
                 background: linear-gradient(160deg, #0b1a10 0%, #1d3b24 50%, #0a0a0a 100%);
                 font-family: "Inter", system-ui, sans-serif;
                 /* White font: the background is a very dark green-to-black gradient, so white text
@@ -73,12 +76,16 @@
             }
             nav a:hover, nav a:focus-visible, footer a:hover, footer a:focus-visible {
                 background-color: #7ed957;
+                /* Near-black text on hover: once the button turns bright green, white text would be
+                   hard to read, so the text switches to almost-black for strong contrast */
                 color: #0b1a10;
             }
             /* .plain class: used only on the "Designed by" credit link in the footer.
                It removes the button styling so that link looks like plain text instead of a button. */
             a.plain, a.plain:hover, a.plain:focus-visible {
                 background: none;
+                /* Light gray (off-white): slightly dimmer than the white body text so the
+                   footer credit is readable but doesn't compete with the main content */
                 color: #cccccc;
                 padding: 0;
             }
@@ -86,6 +93,8 @@
                (a list, a build, or contact info) into a box with a faint background,
                a thin green border, and rounded corners so it stands out from the page. */
             .card {
+                /* White at 6% opacity: a very faint see-through white that lightens the card
+                   just enough to separate it from the dark background behind it */
                 background-color: rgba(255, 255, 255, 0.06);
                 border: 1px solid rgba(126, 217, 87, 0.4);
                 border-radius: 12px;
@@ -116,6 +125,49 @@
                 text-align: center;
                 padding-bottom: 40px;
             }
+            /* .option class: used on each checkbox label in the Build Estimator,
+               putting each service on its own line. */
+            .option {
+                display: block;
+                margin: 6px 0;
+                cursor: pointer;
+            }
+            /* .hood-button class: the "Pop the Hood" buttons on the Builds page.
+               Styled like the nav buttons so the site looks consistent. */
+            .hood-button {
+                display: block;
+                margin: 10px 0;
+                padding: 8px 18px;
+                background-color: #2e6b3a;
+                /* White text on the dark green button, matching the nav buttons, so it's readable */
+                color: #ffffff;
+                border: none;
+                border-radius: 999px;
+                font: inherit;
+                cursor: pointer;
+                transition: background-color 0.2s, color 0.2s;
+            }
+            .hood-button:hover, .hood-button:focus-visible {
+                background-color: #7ed957;
+                /* Near-black text on hover, same as the nav buttons, for contrast on bright green */
+                color: #0b1a10;
+            }
+            /* .specs class: the hidden spec list revealed by the hood button */
+            .specs {
+                border-left: 3px solid #7ed957;
+                padding-left: 24px;
+            }
+            /* .status class: the open/closed line on the Contact page.
+               .open turns it green and .closed turns it a soft red. */
+            .status {
+                font-weight: 600;
+            }
+            .status.open {
+                color: #7ed957;
+            }
+            .status.closed {
+                color: #ff8a80;
+            }
             /* Media query: applies only when the screen is 600px wide or less (phones).
                It stacks the nav buttons into a column so they don't wrap awkwardly,
                and tightens the table and cards so everything fits. */
@@ -142,6 +194,7 @@
             <section id="home">
                 <h2>Home</h2>
                 <p>Sneaky Crocodile Customs builds sleepers: cars that look stock from the curb but hide serious performance under the hood. Every build is custom-tailored to the owner, from mild street upgrades to full engine swaps.</p>
+                <p>Our cars keep a low profile until it's time to strike. We keep the factory badges, the stock-looking wheels, and the everyday paint, then hide the horsepower where only you know it's there.</p>
                 <!-- Card div: groups the list of reasons to choose the shop into one box -->
                 <div class="card">
                     <h3>Why a Sneaky Crocodile?</h3>
@@ -158,6 +211,7 @@
             <section id="services">
                 <h2>Services</h2>
                 <p>Pick a single upgrade or combine them into a complete package.</p>
+                <p>Prices below are starting points. Your final quote depends on your car, the parts you choose, and how far you want to go. Every quote is free and comes with a full breakdown, so there are no surprises.</p>
                 <table>
                     <thead>
                         <tr>
@@ -194,26 +248,57 @@
                         </tr>
                     </tbody>
                 </table>
+                <img src="images/turbo.webp" alt="a turbocharger" width="200">
+                <!-- Card div: the build estimator. Checking a box adds that service's starting price to the total. -->
+                <div class="card">
+                    <h3>Build Estimator</h3>
+                    <p>Check the services you want to see a starting estimate for your build.</p>
+                    <label class="option"><input type="checkbox" class="service-option" value="12000"> Engine Swap ($12,000)</label>
+                    <label class="option"><input type="checkbox" class="service-option" value="6500"> Forced Induction ($6,500)</label>
+                    <label class="option"><input type="checkbox" class="service-option" value="3000"> Suspension &amp; Brakes ($3,000)</label>
+                    <label class="option"><input type="checkbox" class="service-option" value="2500"> Custom Interior ($2,500)</label>
+                    <label class="option"><input type="checkbox" class="service-option" value="4000"> Paint &amp; Wrap ($4,000)</label>
+                    <p id="estimate-total">Estimated starting total: <span class="price">$0</span></p>
+                </div>
             </section>
 
             <section id="builds">
                 <h2>Builds</h2>
                 <p>A few of our favorite recent projects.</p>
+                <p>Each of these cars still looks like it just left the dealership lot or a grocery store parking space. Their owners use them every day, and most people who see them have no idea what's under the hood.</p>
                 <!-- Card divs: each one is a box for a single build, holding its name and description -->
                 <div class="card">
                     <h3>The Grocery Getter</h3>
                     <p>A family station wagon with a twin-turbo V8 swap. 650 horsepower.</p>
                     <img src="images/volvo.jpg" alt="a seemingly lame car" width="200">
+                    <button type="button" class="hood-button">Pop the Hood</button>
+                    <ul class="specs" hidden>
+                        <li>Engine: Twin-turbo 5.0L V8</li>
+                        <li>Power: 650 hp</li>
+                        <li>0-60 mph: 3.6 seconds</li>
+                    </ul>
                 </div>
                 <div class="card">
                     <h3>The Accountant</h3>
                     <p>A beige commuter sedan with an all-wheel-drive conversion, built transmission, and track-ready suspension.</p>
                     <img src="images/sleepyclunker.jpg" alt="the accountant" width="200">
+                    <button type="button" class="hood-button">Pop the Hood</button>
+                    <ul class="specs" hidden>
+                        <li>Engine: Turbocharged 2.5L inline-four</li>
+                        <li>Power: 420 hp</li>
+                        <li>0-60 mph: 3.9 seconds</li>
+                    </ul>
                 </div>
                 <div class="card">
                     <h3>The Swamp Runner</h3>
                     <p>A lifted pickup with long-travel suspension, a supercharged V8, and our signature crocodile-green interior stitching.</p>
                     <img src="images/truck.jpg" alt="the swamp runner" width="200">
+                    <button type="button" class="hood-button">Pop the Hood</button>
+                    <ul class="specs" hidden>
+                        <li>Engine: Supercharged 6.2L V8</li>
+                        <li>Power: 700 hp</li>
+                        <li>0-60 mph: 4.4 seconds</li>
+                    </ul>
                 </div>
             </section>
 
@@ -221,6 +306,7 @@
                 <h2>About</h2>
                 <p>I started Sneaky Crocodile Customs because I always thought some of the coolest cars were the ones that were seemingly normal until you popped the hood. Theres nothing cooler than a regular grocery getter or family vehicle that shreds pavement when no one expects it to. I have a passion for creating unique, high-performance vehicles that turn heads and deliver exceptional driving experiences.</p>
                 <p>We work closely with every customer, from the first sketch to the final dyno run, so the finished car is exactly what you imagined.</p>
+                <img src="images/old.jpg" alt="an old car" width="200">
                 <h3>Our Process</h3>
                 <ol>
                     <li><strong>Consultation:</strong> Tell us about your car and your goals.</li>
@@ -234,8 +320,12 @@
             <section id="contact">
                 <h2>Contact</h2>
                 <p>Ready to start your build? Get in touch for a free consultation.</p>
+                <p>Stop by the shop, give us a call, or send an email with your car's year, make, and model and what you'd like to build. We usually reply within one business day.</p>
+                <img src="images/porsche.avif" alt="sick car" width="200">
                 <!-- Card div: keeps all the contact details together in one box -->
                 <div class="card">
+                    <!-- Filled in by the shop-status script below, based on the current time in Charlotte -->
+                    <p id="shop-status" class="status">Checking shop hours...</p>
                     <p><strong>Shop:</strong> 123 Bayou Road, Charlotte, NC</p>
                     <p><strong>Phone:</strong> (555) 012-3456</p>
                     <p><strong>Email:</strong> builds@sneakycrocodile.example</p>
@@ -261,8 +351,83 @@
                     }
                 }
             }
+
+            /* Dynamic feature 1: Build Estimator (Services page).
+               Adds up the value of every checked service box and shows the total. */
+            function updateEstimate() {
+                var boxes = document.querySelectorAll('.service-option');
+                var total = 0;
+                for (var i = 0; i < boxes.length; i++) {
+                    if (boxes[i].checked) {
+                        total += Number(boxes[i].value);
+                    }
+                }
+                document.querySelector('#estimate-total .price').textContent = '$' + total.toLocaleString('en-US');
+            }
+
+            /* Dynamic feature 2: Pop the Hood (Builds page).
+               Shows or hides the hidden spec list in the same card as the button. */
+            function toggleHood(button) {
+                var specs = button.parentElement.querySelector('.specs');
+                specs.hidden = !specs.hidden;
+                button.textContent = specs.hidden ? 'Pop the Hood' : 'Close the Hood';
+            }
+
+            /* Dynamic feature 3: Open/Closed status (Contact page).
+               Checks the current time in Charlotte (Eastern time) against the shop hours.
+               Hours are listed by day: 0 = Sunday ... 6 = Saturday. null means closed all day. */
+            var shopHours = [null, [8, 18], [8, 18], [8, 18], [8, 18], [8, 18], [9, 14]];
+            var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+            function formatHour(hour) {
+                var suffix = hour < 12 ? 'am' : 'pm';
+                var twelveHour = hour % 12 === 0 ? 12 : hour % 12;
+                return twelveHour + suffix;
+            }
+
+            function updateShopStatus() {
+                var now = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }));
+                var day = now.getDay();
+                var hourNow = now.getHours() + now.getMinutes() / 60;
+                var today = shopHours[day];
+                var status = document.getElementById('shop-status');
+
+                if (today && hourNow >= today[0] && hourNow < today[1]) {
+                    status.textContent = 'Open now - closes at ' + formatHour(today[1]) + ' today.';
+                    status.className = 'status open';
+                    return;
+                }
+
+                /* Closed: find the next time the shop opens */
+                for (var offset = 0; offset < 7; offset++) {
+                    var checkDay = (day + offset) % 7;
+                    var hours = shopHours[checkDay];
+                    if (hours && (offset > 0 || hourNow < hours[0])) {
+                        var when = offset === 0 ? 'today' : (offset === 1 ? 'tomorrow' : dayNames[checkDay]);
+                        status.textContent = 'Closed now - opens ' + when + ' at ' + formatHour(hours[0]) + '.';
+                        break;
+                    }
+                }
+                status.className = 'status closed';
+            }
+
             window.onload = function() {
                 showSection('home');
+
+                var boxes = document.querySelectorAll('.service-option');
+                for (var i = 0; i < boxes.length; i++) {
+                    boxes[i].addEventListener('change', updateEstimate);
+                }
+
+                var hoodButtons = document.querySelectorAll('.hood-button');
+                for (var j = 0; j < hoodButtons.length; j++) {
+                    hoodButtons[j].addEventListener('click', function() {
+                        toggleHood(this);
+                    });
+                }
+
+                updateShopStatus();
+                setInterval(updateShopStatus, 60000);
             };
         </script>
         <script src="../scripts/HTMLInclude.min.js"></script>
