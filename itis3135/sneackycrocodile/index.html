@@ -157,15 +157,16 @@
                 border-left: 3px solid #7ed957;
                 padding-left: 24px;
             }
-            /* .status class: the open/closed line on the Contact page.
-               .open turns it green and .closed turns it a soft red. */
-            .status {
+            /* #shop-status: the open/closed line on the Contact page, always bold */
+            #shop-status {
                 font-weight: 600;
             }
-            .status.open {
+            /* .status-open class: added by the script when the shop is open; turns the line green */
+            .status-open {
                 color: #7ed957;
             }
-            .status.closed {
+            /* .status-closed class: added by the script when the shop is closed; turns the line a soft red */
+            .status-closed {
                 color: #ff8a80;
             }
             /* Media query: applies only when the screen is 600px wide or less (phones).
@@ -325,7 +326,7 @@
                 <!-- Card div: keeps all the contact details together in one box -->
                 <div class="card">
                     <!-- Filled in by the shop-status script below, based on the current time in Charlotte -->
-                    <p id="shop-status" class="status">Checking shop hours...</p>
+                    <p id="shop-status">Checking shop hours...</p>
                     <p><strong>Shop:</strong> 123 Bayou Road, Charlotte, NC</p>
                     <p><strong>Phone:</strong> (555) 012-3456</p>
                     <p><strong>Email:</strong> builds@sneakycrocodile.example</p>
@@ -394,7 +395,7 @@
 
                 if (today && hourNow >= today[0] && hourNow < today[1]) {
                     status.textContent = 'Open now - closes at ' + formatHour(today[1]) + ' today.';
-                    status.className = 'status open';
+                    status.className = 'status-open';
                     return;
                 }
 
@@ -408,7 +409,7 @@
                         break;
                     }
                 }
-                status.className = 'status closed';
+                status.className = 'status-closed';
             }
 
             window.onload = function() {
